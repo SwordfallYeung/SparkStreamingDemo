@@ -13,3 +13,6 @@ http://www.linuxidc.com/Linux/2014-07/104315.htm<br/>
 <br/>
 linux 如何把文件夹里面文件权限修改:<br/>
 https://zhidao.baidu.com/question/139006065.html<br/>
+<br/>
+Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources<br/>
+http://blog.csdn.net/qyl445/article/details/50684691<br/>
