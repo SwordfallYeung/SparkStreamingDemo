@@ -10,3 +10,6 @@ http://blog.csdn.net/lina791211/article/details/11818825<br/>
 <br/>
 Hadoop出现namenode running as process 18472. Stop it first.解决方法:<br/>
 http://www.linuxidc.com/Linux/2014-07/104315.htm<br/>
+<br/>
+linux 如何把文件夹里面文件权限修改:<br/>
+https://zhidao.baidu.com/question/139006065.html<br/>
