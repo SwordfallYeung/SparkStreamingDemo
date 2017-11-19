@@ -16,3 +16,6 @@ https://zhidao.baidu.com/question/139006065.html<br/>
 <br/>
 Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources<br/>
 http://blog.csdn.net/qyl445/article/details/50684691<br/>
+<br/>
+增加spark worker的内存和datanode的内存方法:<br/>
+http://blog.csdn.net/wonder4/article/details/52476008<br/>
