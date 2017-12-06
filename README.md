@@ -21,3 +21,6 @@ http://blog.csdn.net/qyl445/article/details/50684691<br/>
 <br/>
 增加spark worker的内存和datanode的内存方法:<br/>
 http://blog.csdn.net/wonder4/article/details/52476008<br/>
+<br/>
+scala.MatchError异常以及StructType Schema设置:<br/>
+http://blog.csdn.net/gangchengzhong/article/details/70153932<br/>
