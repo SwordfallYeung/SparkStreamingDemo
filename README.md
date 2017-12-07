@@ -26,3 +26,6 @@ scala.MatchError异常以及StructType Schema设置:<br/>
 http://blog.csdn.net/gangchengzhong/article/details/70153932<br/>
 spark streaming向oracle插入日期的问题：<br/>
 http://www.aboutyun.com/thread-18282-1-1.html<br/>
+<br/>
+spark 各类算子：<br/>
+https://www.cnblogs.com/zlslch/p/5723857.html<br/>
