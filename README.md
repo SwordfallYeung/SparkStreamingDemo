@@ -31,6 +31,8 @@ spark 各类算子：<br/>
 https://www.cnblogs.com/zlslch/p/5723857.html<br/>
 <br/>
 foreachPartitions遍历插入数据,用java编写的连接池，scala编写的有问题：<br/>
-http://blog.csdn.net/erfucun/article/details/52312682<br/>java编写的连接池可以使用，SparkStreaming程序有问题，可以参见第三个连接
-http://blog.csdn.net/legotime/article/details/51836039<br/>scala编写的连接池有问题，SparkStreaming程序正常
+java编写的连接池可以使用，SparkStreaming程序有问题，可以参见第三个连接:<br/>
+http://blog.csdn.net/erfucun/article/details/52312682<br/>
+scala编写的连接池有问题，SparkStreaming程序正常:<br/>
+http://blog.csdn.net/legotime/article/details/51836039<br/>
 https://www.cnblogs.com/qinjunli/p/4588089.html<br/> oracle ORA-01000: maximum open cursors exceeded问题的解决方法
