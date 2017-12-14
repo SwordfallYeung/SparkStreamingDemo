@@ -37,3 +37,6 @@ scala编写的连接池有问题，SparkStreaming程序正常:<br/>
 http://blog.csdn.net/legotime/article/details/51836039<br/>
 oracle ORA-01000: maximum open cursors exceeded问题的解决方法:<br/>
 https://www.cnblogs.com/qinjunli/p/4588089.html<br/> 
+<br/>
+oracle批量插入数据操作:<br/>
+http://blog.csdn.net/yuanzexi/article/details/50912630<br/>
