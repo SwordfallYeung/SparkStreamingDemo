@@ -40,3 +40,6 @@ https://www.cnblogs.com/qinjunli/p/4588089.html<br/>
 <br/>
 oracle批量插入数据操作:<br/>
 http://blog.csdn.net/yuanzexi/article/details/50912630<br/>
+<br/>
+spark 连接池c3p0使用:<br/>
+http://www.jianshu.com/p/65c1b319b70a<br/>
