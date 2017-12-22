@@ -43,3 +43,6 @@ http://blog.csdn.net/yuanzexi/article/details/50912630<br/>
 <br/>
 spark 连接池c3p0使用:<br/>
 http://www.jianshu.com/p/65c1b319b70a<br/>
+<br/>
+ scala中 object 和 class的区别:<br/>
+http://blog.csdn.net/wangxiaotongfan/article/details/48242029<br/>
