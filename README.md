@@ -49,3 +49,6 @@ http://blog.csdn.net/wangxiaotongfan/article/details/48242029<br/>
 <br/>
 scala基础语法学习：<br/>
 http://www.yiibai.com/scala/scala_overview.html<br/>
+<br/>
+spark读取配置文件中的配置<br/>
+http://blog.csdn.net/u012307002/article/details/53308937<br/>
