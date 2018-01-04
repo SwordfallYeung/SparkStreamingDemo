@@ -56,3 +56,5 @@ http://blog.csdn.net/u012307002/article/details/53308937<br/>
 Spark Streaming使用Kafka保证数据零丢失：<br/>
 https://www.cnblogs.com/jacksu-tencent/p/5135869.html<br/>
 https://www.jianshu.com/p/8603ba4be007<br/>
+http://blog.csdn.net/lsshlsw/article/details/51133217<br/>
+https://www.iteblog.com/archives/1591.html<br/>
