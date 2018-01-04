@@ -52,3 +52,7 @@ http://www.yiibai.com/scala/scala_overview.html<br/>
 <br/>
 spark读取配置文件中的配置<br/>
 http://blog.csdn.net/u012307002/article/details/53308937<br/>
+<br/>
+Spark Streaming使用Kafka保证数据零丢失：<br/>
+https://www.cnblogs.com/jacksu-tencent/p/5135869.html<br/>
+https://www.jianshu.com/p/8603ba4be007<br/>
