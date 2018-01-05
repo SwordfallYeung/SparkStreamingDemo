@@ -60,4 +60,6 @@ http://blog.csdn.net/lsshlsw/article/details/51133217<br/>
 https://www.iteblog.com/archives/1591.html<br/>
 <br/>
 Spark Streaming消费Kafka Direct方式数据零丢失实现：<br/>
-https://www.cnblogs.com/hd-zg/p/6841249.html<br/>
+https://www.cnblogs.com/hd-zg/p/6841249.html<br/>:
+Spark streaming接收Kafka数据, 偏移量记录的方式有checkpoint、数据库或文件记录或者回写到zookeeper中进行记录:<br/>
+https://www.cnblogs.com/xlturing/p/6246538.html<br/>
