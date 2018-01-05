@@ -58,3 +58,6 @@ https://www.cnblogs.com/jacksu-tencent/p/5135869.html<br/>
 https://www.jianshu.com/p/8603ba4be007<br/>
 http://blog.csdn.net/lsshlsw/article/details/51133217<br/>
 https://www.iteblog.com/archives/1591.html<br/>
+<br/>
+Spark Streaming消费Kafka Direct方式数据零丢失实现：<br/>
+https://www.cnblogs.com/hd-zg/p/6841249.html<br/>
