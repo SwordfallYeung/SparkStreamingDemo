@@ -63,3 +63,6 @@ Spark Streaming消费Kafka Direct方式数据零丢失实现：<br/>
 https://www.cnblogs.com/hd-zg/p/6841249.html<br/>:
 Spark streaming接收Kafka数据, 偏移量记录的方式有checkpoint、数据库或文件记录或者回写到zookeeper中进行记录:<br/>
 https://www.cnblogs.com/xlturing/p/6246538.html<br/>
+<br/>
+spark Direct 偏移量保存在zookeeper上
+https://github.com/xlturing/spark-journey/blob/master/SparkStreamingKafka/src/main/scala/com/sparkstreaming/main/KafkaManager.scala<br/>
