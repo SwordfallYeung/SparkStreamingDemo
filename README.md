@@ -66,3 +66,4 @@ https://www.cnblogs.com/xlturing/p/6246538.html<br/>
 <br/>
 spark Direct 偏移量保存在zookeeper上
 https://github.com/xlturing/spark-journey/blob/master/SparkStreamingKafka/src/main/scala/com/sparkstreaming/main/KafkaManager.scala<br/>
+http://blog.csdn.net/lw_ghy/article/details/50926855<br/>
