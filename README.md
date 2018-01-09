@@ -67,3 +67,11 @@ https://www.cnblogs.com/xlturing/p/6246538.html<br/>
 spark Direct 偏移量保存在zookeeper上
 https://github.com/xlturing/spark-journey/blob/master/SparkStreamingKafka/src/main/scala/com/sparkstreaming/main/KafkaManager.scala<br/>
 http://blog.csdn.net/lw_ghy/article/details/50926855<br/>
+<br/>
+Spark Streaming -2. Kafka集成指南（Kafka版本0.10.0或更高版本）<br/>
+http://blog.csdn.net/zhongguozhichuang/article/details/53282858<br/>
+ Spark2.x学习笔记：1、Spark2.2快速入门（本地模式）<br/>
+http://blog.csdn.net/chengyuqiang/article/details/77671748?locationNum=4&fps=1<br/>
+Spark2.11 两种流操作 + Kafka<br/>
+http://blog.csdn.net/zeroder/article/details/73650731<br/>
+
