@@ -74,4 +74,6 @@ http://blog.csdn.net/zhongguozhichuang/article/details/53282858<br/>
 http://blog.csdn.net/chengyuqiang/article/details/77671748?locationNum=4&fps=1<br/>
 Spark2.11 两种流操作 + Kafka<br/>
 http://blog.csdn.net/zeroder/article/details/73650731<br/>
-
+<br/>
+foreachPartition和mapPartition的区别，一个Transformation运算，一个action运算：<br/>
+http://blog.csdn.net/u010454030/article/details/78897150<br/>
