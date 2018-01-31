@@ -77,3 +77,5 @@ http://blog.csdn.net/zeroder/article/details/73650731<br/>
 <br/>
 foreachPartition和mapPartition的区别，一个Transformation运算，一个action运算：<br/>
 http://blog.csdn.net/u010454030/article/details/78897150<br/>
+
+spark心跳与集群机器时间有关，如果集群每台机器时间不一致，会导致spark心跳失衡，故而报错
