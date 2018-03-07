@@ -29,7 +29,7 @@ http://www.aboutyun.com/thread-18282-1-1.html<br/>
 <br/>
 spark 各类算子：<br/>
 https://www.cnblogs.com/zlslch/p/5723857.html<br/>
-http://homepage.cs.latrobe.edu.au/zhe/ZhenHeSparkRDDAPIExamples.html<br/> 国外一个牛人的关于Spark RDD API的博客，有详尽的示例
+http://homepage.cs.latrobe.edu.au/zhe/ZhenHeSparkRDDAPIExamples.html 国外一个牛人的关于Spark RDD API的博客，有详尽的示例<br/>
 <br/>
 foreachPartitions遍历插入数据,用java编写的连接池，scala编写的有问题：<br/>
 java编写的连接池可以使用，SparkStreaming程序有问题，可以参见第三个连接:<br/>
