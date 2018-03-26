@@ -80,3 +80,6 @@ foreachPartition和mapPartition的区别，一个Transformation运算，一个ac
 http://blog.csdn.net/u010454030/article/details/78897150<br/>
 
 spark心跳与集群机器时间有关，如果集群每台机器时间不一致，会导致spark心跳失衡，故而报错
+
+Kafka+Spark Streaming+Redis实时计算整合实践：<br/>
+http://dataunion.org/17837.html
