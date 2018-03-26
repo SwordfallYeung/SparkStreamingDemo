@@ -83,3 +83,6 @@ spark心跳与集群机器时间有关，如果集群每台机器时间不一致
 
 Kafka+Spark Streaming+Redis实时计算整合实践：<br/>
 http://dataunion.org/17837.html
+
+整合Kafka到spark-streaming实例:<br/>
+https://cloud.tencent.com/developer/article/1017077
