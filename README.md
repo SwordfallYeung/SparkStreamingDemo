@@ -88,4 +88,6 @@ http://dataunion.org/17837.html
 https://cloud.tencent.com/developer/article/1017077
 
 # spark streaming的业务适用场景
-参考资料：https://cloud.tencent.com/developer/article/1106470<br/>
+参考资料：<br/>
+https://cloud.tencent.com/developer/article/1106470<br/>
+https://hacpai.com/article/1499918046636<br/>
