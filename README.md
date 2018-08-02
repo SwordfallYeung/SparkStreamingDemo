@@ -86,3 +86,6 @@ http://dataunion.org/17837.html
 
 整合Kafka到spark-streaming实例:<br/>
 https://cloud.tencent.com/developer/article/1017077
+
+# spark streaming的业务适用场景
+参考资料：https://cloud.tencent.com/developer/article/1106470<br/>
