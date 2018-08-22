@@ -93,5 +93,9 @@ https://cloud.tencent.com/developer/article/1106470<br/>
 https://hacpai.com/article/1499918046636<br/>
 实时推荐、用户行为分析等<br/>
 
+# structured-streaming的使用
 spark-streaming与structured-streaming的关联：<br/>
 http://www.sohu.com/a/111860912_116235
+
+foreach写入到数据库中:<br/>
+https://www.cnblogs.com/huliangwen/p/7470705.html
