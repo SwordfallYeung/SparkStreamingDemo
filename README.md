@@ -99,4 +99,5 @@ http://www.sohu.com/a/111860912_116235
 
 structured-streaming foreach模式写入到数据库中:<br/>
 https://www.cnblogs.com/huliangwen/p/7470705.html 只是提了个点子，没有详细说明<br/>
-https://www.jianshu.com/p/0a65a248c6a8 将数据写入到mysql中 
+https://www.jianshu.com/p/0a65a248c6a8 将数据写入到mysql中 <br/>
+https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或者kafka中，需要重写foreachwriter类
