@@ -101,3 +101,8 @@ structured-streaming foreach模式写入到数据库中:<br/>
 https://www.cnblogs.com/huliangwen/p/7470705.html 只是提了个点子，没有详细说明<br/>
 https://www.jianshu.com/p/0a65a248c6a8 将数据写入到mysql中 <br/>
 https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或者kafka中，需要重写foreachwriter类
+
+# sparkSession使用报错
+“Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
+https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-type-stored-in-a-dataset-when-creating-a-dat<br/>
+添加“import sparkSession.implicits._” 而不是“import spark.implicits._”
