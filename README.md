@@ -87,6 +87,9 @@ http://dataunion.org/17837.html
 整合Kafka到spark-streaming实例:<br/>
 https://cloud.tencent.com/developer/article/1017077
 
+spark streaming解析json<br/>
+https://blog.csdn.net/weixin_35040169/article/details/80057561
+
 # spark streaming的业务适用场景
 参考资料：<br/>
 https://cloud.tencent.com/developer/article/1106470<br/>
@@ -106,3 +109,4 @@ https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或�
 “Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
 https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-type-stored-in-a-dataset-when-creating-a-dat<br/>
 添加“import sparkSession.implicits._” 而不是“import spark.implicits._”
+
