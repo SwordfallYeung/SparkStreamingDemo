@@ -88,7 +88,8 @@ http://dataunion.org/17837.html
 https://cloud.tencent.com/developer/article/1017077
 
 spark streaming解析json<br/>
-https://blog.csdn.net/weixin_35040169/article/details/80057561
+https://blog.csdn.net/weixin_35040169/article/details/80057561<br/>
+https://blog.csdn.net/cjuexuan/article/details/49701303<br/>
 
 # spark streaming的业务适用场景
 参考资料：<br/>
