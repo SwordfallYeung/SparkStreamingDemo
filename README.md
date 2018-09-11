@@ -106,6 +106,24 @@ https://www.cnblogs.com/huliangwen/p/7470705.html 只是提了个点子，没有
 https://www.jianshu.com/p/0a65a248c6a8 将数据写入到mysql中 <br/>
 https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或者kafka中，需要重写foreachwriter类
 
+# structured-streaming读取kafka中的json数据
+报错“Caused by: java.lang.NoSuchMethodError: org.json4s.jackson.JsonMethods$.parse(Lorg/json4s/JsonInput;Z)Lorg/json4s/JsonAST$JValue;”<br/>
+报错原因是在maven的pom.xml文件中配置了如下内容：
+><dependency><br/>
+            <groupId>org.json4s</groupId><br/>
+            <artifactId>json4s-native_2.11</artifactId><br/>
+            <version>3.6.0</version><br/>
+        </dependency><br/>
+        <dependency><br/>
+            <groupId>org.json4s</groupId><br/>
+            <artifactId>json4s-jackson_2.11</artifactId><br/>
+            <version>3.6.0</version><br/>
+        </dependency><br/>
+  
+上述内容无需再次配置，配置spark的jar包已嵌套配置上述jar包
+structured streaming读取kafka中的json数据参考资料：<br/>
+https://blog.csdn.net/weixin_35040169/article/details/80057561
+
 # sparkSession使用报错
 “Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
 https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-type-stored-in-a-dataset-when-creating-a-dat<br/>
