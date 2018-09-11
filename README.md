@@ -97,6 +97,14 @@ https://cloud.tencent.com/developer/article/1106470<br/>
 https://hacpai.com/article/1499918046636<br/>
 实时推荐、用户行为分析等<br/>
 
+当分配2个线程跑程序时，spark运行界面跑到Executor行时停止不动：<br/>
+原因：线程阻塞，分配线程太少，至少分配3或4个以上，本人以4为准，如：
+>val sparkSession = SparkSession<br/>
+      .builder()<br/>
+      .master("local[4]")<br/>
+      .appName(appName)<br/>
+      .getOrCreate()<br/>
+
 # structured-streaming的使用
 spark-streaming与structured-streaming的关联：<br/>
 http://www.sohu.com/a/111860912_116235
