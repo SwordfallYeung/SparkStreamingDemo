@@ -122,7 +122,8 @@ https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或�
   
 上述内容无需再次配置，配置spark的jar包已嵌套配置上述jar包
 structured streaming读取kafka中的json数据参考资料：<br/>
-https://blog.csdn.net/weixin_35040169/article/details/80057561
+https://blog.csdn.net/weixin_35040169/article/details/80057561<br/>
+https://github.com/json4s/json4s/<br/>
 
 # sparkSession使用报错
 “Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
