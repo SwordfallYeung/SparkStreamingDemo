@@ -138,3 +138,5 @@ https://github.com/json4s/json4s/<br/>
 https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-type-stored-in-a-dataset-when-creating-a-dat<br/>
 添加“import sparkSession.implicits._” 而不是“import spark.implicits._”
 
+# scala在spark中使用log4j报不能序列化
+https://blog.csdn.net/xiaolin93/article/details/78526888?locationNum=9&fps=1
