@@ -130,8 +130,30 @@ https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或�
   
 上述内容无需再次配置，配置spark的jar包已嵌套配置上述jar包
 structured streaming读取kafka中的json数据参考资料：<br/>
+这里针对的只是一个json对象，如json范例：
+> {"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640}
+解决方案如下：
 https://blog.csdn.net/weixin_35040169/article/details/80057561<br/>
 https://github.com/json4s/json4s/<br/>
+
+如果传过来的是一个json数组，如json范例：
+>[{"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640},{"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640}]
+解决方案如下，通过添加一个List：<br/>
+val query1 = df<br/>
+      .selectExpr( "CAST(value AS STRING)") //对字段进行UDF操作，并返回该列<br/>
+      .as[(String)]<br/>
+      .map(value => {<br/>
+        println(value)<br/>
+        //隐式转换，使用json4s的默认转化器<br/>
+        implicit val formats: DefaultFormats.type = DefaultFormats<br/>
+        val json = parse(value)<br/>
+        json.extract[List[Record]]<br/>
+      })<br/>
+      .writeStream<br/>
+      .outputMode(outputMode)<br/>
+      .foreach(new RecordWriter())<br/>
+      .trigger(Trigger.ProcessingTime(processingTime)) //设置5秒为一次批处理查询<br/>
+      .start()<br/>
 
 # sparkSession使用报错
 “Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
