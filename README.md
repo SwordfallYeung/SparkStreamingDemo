@@ -131,13 +131,13 @@ https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或�
 上述内容无需再次配置，配置spark的jar包已嵌套配置上述jar包
 structured streaming读取kafka中的json数据参考资料：<br/>
 这里针对的只是一个json对象，如json范例：
-> {"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640}
-解决方案如下：
+> {"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640}<br/>
+解决方案如下：<br/>
 https://blog.csdn.net/weixin_35040169/article/details/80057561<br/>
 https://github.com/json4s/json4s/<br/>
 
 如果传过来的是一个json数组，如json范例：
->[{"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640},{"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640}]
+>[{"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640},{"deviceId":"ab123","imsi":"123456789","catchTime":1537450341,"regional":"广东省深圳市","createTime":1537450640}]<br/>
 解决方案如下，通过添加一个List：<br/>
 val query1 = df<br/>
       .selectExpr( "CAST(value AS STRING)") //对字段进行UDF操作，并返回该列<br/>
