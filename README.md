@@ -162,3 +162,6 @@ https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-t
 
 ### scala在spark中使用log4j报不能序列化
 https://blog.csdn.net/xiaolin93/article/details/78526888?locationNum=9&fps=1
+
+### Spark 判断Rdd是否为空
+https://www.cnblogs.com/dt-zhw/p/5551438.html
