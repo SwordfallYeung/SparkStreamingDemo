@@ -91,7 +91,7 @@ spark streaming解析json<br/>
 https://blog.csdn.net/weixin_35040169/article/details/80057561<br/>
 https://github.com/json4s/json4s<br/>
 
-# spark streaming的业务适用场景
+### spark streaming的业务适用场景
 参考资料：<br/>
 https://cloud.tencent.com/developer/article/1106470<br/>
 https://hacpai.com/article/1499918046636<br/>
@@ -105,7 +105,7 @@ https://hacpai.com/article/1499918046636<br/>
       .appName(appName)<br/>
       .getOrCreate()<br/>
 
-# structured-streaming的使用
+### structured-streaming的使用
 spark-streaming与structured-streaming的关联：<br/>
 http://www.sohu.com/a/111860912_116235
 
@@ -114,7 +114,7 @@ https://www.cnblogs.com/huliangwen/p/7470705.html 只是提了个点子，没有
 https://www.jianshu.com/p/0a65a248c6a8 将数据写入到mysql中 <br/>
 https://toutiao.io/posts/8vqfdo/preview 将数据写入到内存或者mysql或者kafka中，需要重写foreachwriter类
 
-# structured-streaming读取kafka中的json数据
+### structured-streaming读取kafka中的json数据
 报错“Caused by: java.lang.NoSuchMethodError: org.json4s.jackson.JsonMethods$.parse(Lorg/json4s/JsonInput;Z)Lorg/json4s/JsonAST$JValue;”<br/>
 报错原因是在maven的pom.xml文件中配置了如下内容：
 ><dependency><br/>
@@ -155,10 +155,10 @@ val query1 = df<br/>
       .trigger(Trigger.ProcessingTime(processingTime)) //设置5秒为一次批处理查询<br/>
       .start()<br/>
 
-# sparkSession使用报错
+### sparkSession使用报错
 “Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
 https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-type-stored-in-a-dataset-when-creating-a-dat<br/>
 添加“import sparkSession.implicits._” 而不是“import spark.implicits._”
 
-# scala在spark中使用log4j报不能序列化
+### scala在spark中使用log4j报不能序列化
 https://blog.csdn.net/xiaolin93/article/details/78526888?locationNum=9&fps=1
