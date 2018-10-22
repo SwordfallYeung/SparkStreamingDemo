@@ -165,3 +165,6 @@ https://blog.csdn.net/xiaolin93/article/details/78526888?locationNum=9&fps=1
 
 ### Spark 判断Rdd是否为空
 https://www.cnblogs.com/dt-zhw/p/5551438.html
+
+### sparkStreaming数据倾斜解决方案
+https://tech.meituan.com/spark_tuning_pro.html
