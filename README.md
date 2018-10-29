@@ -168,3 +168,6 @@ https://www.cnblogs.com/dt-zhw/p/5551438.html
 
 ### sparkStreaming数据倾斜解决方案
 https://tech.meituan.com/spark_tuning_pro.html
+
+### Spark参数调优
+https://www.cnblogs.com/arachis/p/spark_parameters.html
