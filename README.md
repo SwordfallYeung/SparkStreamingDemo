@@ -171,3 +171,6 @@ https://tech.meituan.com/spark_tuning_pro.html
 
 ### Spark参数调优
 https://www.cnblogs.com/arachis/p/spark_parameters.html
+
+### Spark异常捕获处理
+http://slamke.github.io/2017/05/12/Spark%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8/
