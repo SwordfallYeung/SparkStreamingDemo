@@ -177,3 +177,6 @@ http://slamke.github.io/2017/05/12/Spark%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%
 
 ### spark scala处理json4s json4s使用指南
 https://segmentfault.com/a/1190000007302496
+
+### DataSet数据集在使用sql()时，无法使用map，flatMap等转换算子的解决办法
+http://blog.51cto.com/9269309/1954540
