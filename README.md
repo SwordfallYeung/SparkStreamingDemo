@@ -180,3 +180,6 @@ https://segmentfault.com/a/1190000007302496
 
 ### DataSet数据集在使用sql()时，无法使用map，flatMap等转换算子的解决办法
 http://blog.51cto.com/9269309/1954540
+
+### spark报错 task not serializable
+https://blog.csdn.net/javastart/article/details/51206715
