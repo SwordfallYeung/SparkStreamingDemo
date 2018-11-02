@@ -182,5 +182,5 @@ https://segmentfault.com/a/1190000007302496
 http://blog.51cto.com/9269309/1954540
 
 ### spark报错 task not serializable
-注意问题：在spark的main主程序中调用外部类，外部类都需要序列化
+注意问题：在spark的main主程序中调用外部类，外部类都需要序列化<br/>
 http://www.aboutyun.com/thread-19464-1-1.html
