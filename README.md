@@ -184,3 +184,6 @@ http://blog.51cto.com/9269309/1954540
 ### spark报错 task not serializable
 注意问题：在spark的main主程序中调用外部类，外部类都需要序列化<br/>
 http://www.aboutyun.com/thread-19464-1-1.html
+
+### 同一个SparkStreaming任务中同时处理多个topic消息，每个topic中处理逻辑都不同，如何高效实现
+http://xuexi.edu360.cn/question/1005.html
