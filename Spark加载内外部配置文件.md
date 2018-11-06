@@ -38,3 +38,16 @@ val database = resource.getString("mongo.database")<br/>
 配置文件config.properties如上所示：
 
 scala外部读取config.properties文件的代码，如下：
+>val configPath = "config.properties"<br/>
+val props = new Properties()<br/>
+props.load(new FileInputStream(configPath))<br/>
+val appName = props.getProperty("kafka.faceRecordName")<br/>
+val kafkaServers = props.getProperty("kafka.servers")<br/>
+val faceTopics = props.getProperty("kafka.faceTopics")<br/>
+val faceToCompareTopics = props.getProperty("kafka.faceToCompareTopics")<br/>
+val startingOffsets = props.getProperty("kafka.startingOffsets")<br/>
+val outputMode = props.getProperty("kafka.outputMode")<br/>
+val processingTime = props.getProperty("kafka.processingTime")<br/>
+val database = props.getProperty("mongo.database")<br/>
+
+参考资料：https://blog.csdn.net/u012307002/article/details/53308937
