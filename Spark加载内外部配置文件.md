@@ -1,6 +1,6 @@
 ## Spark读取配置文件有两种方式：
 
-1.把配置文件config.properties放到java项目的resources目录下，直接把配置文件打到java项目里面，这种方式方便，缺点是配置修改之后需要重新打包，比较繁琐。
+1. 把配置文件config.properties放到java项目的resources目录下，直接把配置文件打到java项目里面，这种方式方便，缺点是配置修改之后需要重新打包，比较繁琐。
 
 配置文件config.properties一般配置数据库ip、账户密码、kafka的接收ip等一些易变化的配置，如：
 >#kafka配置<br/>
