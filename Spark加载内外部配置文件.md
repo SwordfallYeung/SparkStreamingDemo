@@ -32,3 +32,9 @@ val startingOffsets = resource.getString("kafka.startingOffsets")<br/>
 val outputMode = resource.getString("kafka.outputMode")<br/>
 val processingTime = resource.getString("kafka.processingTime")<br/>
 val database = resource.getString("mongo.database")<br/>
+
+2. 把配置文件config.properties放在部署该项目的外面，不打进java项目里面，直接通过spark submit的--files命令额外指定外面的配置文件，这种方式就是修改配置文件后，不需要重新编译打包。
+
+配置文件config.properties如上所示：
+
+scala外部读取config.properties文件的代码，如下：
