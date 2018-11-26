@@ -192,3 +192,6 @@ http://xuexi.edu360.cn/question/1005.html
 https://blog.csdn.net/chen20111/article/details/82798207<br/>
 https://www.jianshu.com/p/0fe51185eeba<br/>
 https://www.iteblog.com/archives/1353.html
+
+### spark submit打成的jar包 如何修改jar包里面的config.properties配置文件
+手动修改方式：
