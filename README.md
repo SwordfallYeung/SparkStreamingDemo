@@ -195,3 +195,7 @@ https://www.iteblog.com/archives/1353.html
 
 ### spark submit打成的jar包 如何修改jar包里面的config.properties配置文件
 手动修改方式：
+
+### spark 报错：No Route to Host from localhost.localdomain/127.0.0.1 to master:9000 failed on socket timeout exception
+http://www.zhangyitian.cn/blog/%E8%A7%A3%E5%86%B3spark-shell%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99%EF%BC%9Ano-route-to-host-from-localhost-localdomain127-0-0-1-to-master9000-failed-on-socket-timeout-exception/<br/>
+服务器里面有hadoop的配置文件（不管在哪），spark都会读取到，gg，删除hadoop的配置文件就行
