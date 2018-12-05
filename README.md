@@ -105,6 +105,54 @@ https://hacpai.com/article/1499918046636<br/>
       .appName(appName)<br/>
       .getOrCreate()<br/>
 
+### sparkSession使用报错
+“Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
+https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-type-stored-in-a-dataset-when-creating-a-dat<br/>
+添加“import sparkSession.implicits._” 而不是“import spark.implicits._”
+
+### scala在spark中使用log4j报不能序列化
+https://blog.csdn.net/xiaolin93/article/details/78526888?locationNum=9&fps=1
+
+### Spark 判断Rdd是否为空
+https://www.cnblogs.com/dt-zhw/p/5551438.html
+
+### sparkStreaming数据倾斜解决方案
+https://tech.meituan.com/spark_tuning_pro.html
+
+### Spark参数调优
+https://www.cnblogs.com/arachis/p/spark_parameters.html
+
+### Spark异常捕获处理
+http://slamke.github.io/2017/05/12/Spark%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8/
+
+### spark scala处理json4s json4s使用指南
+https://segmentfault.com/a/1190000007302496
+
+### DataSet数据集在使用sql()时，无法使用map，flatMap等转换算子的解决办法
+http://blog.51cto.com/9269309/1954540
+
+### spark报错 task not serializable
+注意问题：在spark的main主程序中调用外部类，外部类都需要序列化<br/>
+http://www.aboutyun.com/thread-19464-1-1.html
+
+### 同一个SparkStreaming任务中同时处理多个topic消息，每个topic中处理逻辑都不同，如何高效实现
+http://xuexi.edu360.cn/question/1005.html
+
+### Spark on Yarn 日志过大解决方案
+https://blog.csdn.net/chen20111/article/details/82798207<br/>
+https://www.jianshu.com/p/0fe51185eeba<br/>
+https://www.iteblog.com/archives/1353.html
+
+### spark submit打成的jar包 如何修改jar包里面的config.properties配置文件
+手动修改方式：
+
+### spark 报错：No Route to Host from localhost.localdomain/127.0.0.1 to master:9000 failed on socket timeout exception
+http://www.zhangyitian.cn/blog/%E8%A7%A3%E5%86%B3spark-shell%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99%EF%BC%9Ano-route-to-host-from-localhost-localdomain127-0-0-1-to-master9000-failed-on-socket-timeout-exception/<br/>
+服务器里面有hadoop的配置文件（不管在哪），spark都会读取到，gg，删除hadoop的配置文件就行
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+# structured-streaming
 ### structured-streaming的使用
 spark-streaming与structured-streaming的关联：<br/>
 http://www.sohu.com/a/111860912_116235
@@ -155,47 +203,12 @@ val query1 = df<br/>
       .trigger(Trigger.ProcessingTime(processingTime)) //设置5秒为一次批处理查询<br/>
       .start()<br/>
 
-### sparkSession使用报错
-“Unable to find encoder for type stored in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._ Support for serializing other types will be added in future releases. val lines = insiDE.selectExpr("CAST(value AS STRING)").as[String]” 报错<br/>
-https://stackoverflow.com/questions/38664972/why-is-unable-to-find-encoder-for-type-stored-in-a-dataset-when-creating-a-dat<br/>
-添加“import sparkSession.implicits._” 而不是“import spark.implicits._”
-
-### scala在spark中使用log4j报不能序列化
-https://blog.csdn.net/xiaolin93/article/details/78526888?locationNum=9&fps=1
-
-### Spark 判断Rdd是否为空
-https://www.cnblogs.com/dt-zhw/p/5551438.html
-
-### sparkStreaming数据倾斜解决方案
-https://tech.meituan.com/spark_tuning_pro.html
-
-### Spark参数调优
-https://www.cnblogs.com/arachis/p/spark_parameters.html
-
-### Spark异常捕获处理
-http://slamke.github.io/2017/05/12/Spark%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8/
-
-### spark scala处理json4s json4s使用指南
-https://segmentfault.com/a/1190000007302496
-
-### DataSet数据集在使用sql()时，无法使用map，flatMap等转换算子的解决办法
-http://blog.51cto.com/9269309/1954540
-
-### spark报错 task not serializable
-注意问题：在spark的main主程序中调用外部类，外部类都需要序列化<br/>
-http://www.aboutyun.com/thread-19464-1-1.html
-
-### 同一个SparkStreaming任务中同时处理多个topic消息，每个topic中处理逻辑都不同，如何高效实现
-http://xuexi.edu360.cn/question/1005.html
-
-### Spark on Yarn 日志过大解决方案
-https://blog.csdn.net/chen20111/article/details/82798207<br/>
-https://www.jianshu.com/p/0fe51185eeba<br/>
-https://www.iteblog.com/archives/1353.html
-
-### spark submit打成的jar包 如何修改jar包里面的config.properties配置文件
-手动修改方式：
-
-### spark 报错：No Route to Host from localhost.localdomain/127.0.0.1 to master:9000 failed on socket timeout exception
-http://www.zhangyitian.cn/blog/%E8%A7%A3%E5%86%B3spark-shell%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99%EF%BC%9Ano-route-to-host-from-localhost-localdomain127-0-0-1-to-master9000-failed-on-socket-timeout-exception/<br/>
-服务器里面有hadoop的配置文件（不管在哪），spark都会读取到，gg，删除hadoop的配置文件就行
+### structured streaming 丢失的参数
+不能配置的参数<br/>
+>group.id: 对每个查询，kafka 自动创建一个唯一的 group<br/>
+auto.offset.reset: 可以通过 startingOffsets 指定，Structured Streaming 会对任何流数据维护 offset, 以保证承诺的 exactly once.<br/>
+key.deserializer: 在 DataFrame 上指定，默认 ByteArrayDeserializer<br/>
+value.deserializer: 在 DataFrame 上指定，默认 ByteArrayDeserializer<br/>
+enable.auto.commit:<br/>
+interceptor.classes:<br/>
+https://www.cnblogs.com/huzuoliang/p/7070728.html<br/>
