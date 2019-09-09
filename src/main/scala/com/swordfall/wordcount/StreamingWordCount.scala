@@ -1,7 +1,8 @@
-package cn.itcast.spark.streaming.demo1
+package com.swordfall.wordcount
 
-import org.apache.spark.{SparkConf, SparkContext}
+import com.swordfall.common.LoggerLevels
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * @author y15079
