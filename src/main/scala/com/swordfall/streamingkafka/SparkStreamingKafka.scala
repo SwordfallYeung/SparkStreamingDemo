@@ -83,19 +83,44 @@ object SparkStreamingKafka {
         println("================= Total " + result.length + " events in this batch ..")
 
         val jedis = InternalRedisClient.getPool.getResource
-        val p1: Pipeline = jedis.pipelined()
-        p1.select(dbDefaultIndex)
-        p1.multi() // 开启事务
+        // redis是单线程的，下一次请求必须等待上一次请求执行完成后才能继续执行，然而使用Pipeline模式，客户端可以一次性的发送多个命令，无需等待服务端返回。这样就大大的减少了网络往返时间，提高了系统性能。
+        val pipeline: Pipeline = jedis.pipelined()
+        pipeline.select(dbDefaultIndex)
+        pipeline.multi() // 开启事务
 
         // 逐条处理消息
         result.foreach{
           record =>
-            // 增加小时总pv
-            val pv_by_hour_key = "pv" + record.hour
-            p1.incr(pv_by_hour_key)
 
             // 增加网站小时pv
+            val site_pv_by_hour_key = "site_pv" + record.site_id + "_" + record.hour
+            pipeline.incr(site_pv_by_hour_key)
+
+            // 增加小时总pv
+            val pv_by_hour_key = "pv" + record.hour
+            pipeline.incr(pv_by_hour_key)
+
+            // 使用set保存当天每个小时网站的uv
+            val site_uv_by_hour_key = "site_uv_" + record.site_id + "_" + record.hour
+            pipeline.sadd(site_uv_by_hour_key, record.user_id)
+
+            // 使用set保存当天每个小时的uv
+            val uv_by_hour_key = "uv_" + record.hour
+            pipeline.sadd(uv_by_hour_key, record.user_id)
         }
+
+        // 更新Offset
+        offsetRanges.foreach{
+          offsetRange =>
+            println("partition: " + offsetRange.partition + " fromOffset: " + offsetRange.fromOffset + " untilOffset: " + offsetRange.untilOffset)
+            val topic_partition_key = offsetRange.topic + "_" + offsetRange.partition
+            pipeline.set(topic_partition_key, offsetRange.untilOffset + "")
+        }
+
+        pipeline.exec() // 提交事务
+        pipeline.sync() // 关闭pipeline
+
+        InternalRedisClient.getPool.returnResource(jedis)
     }
   }
 
