@@ -8,7 +8,6 @@ import org.apache.spark.streaming.kafka010.{ConsumerStrategies, HasOffsetRanges,
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.codehaus.jackson.map.deser.std.StringDeserializer
 import redis.clients.jedis.Pipeline
-import shaded.parquet.org.apache.thrift.Option.Some
 
 /**
   * 获取topic最小的offset
@@ -131,7 +130,7 @@ object SparkStreamingKafka {
   }
 
   def parseLog(line: String): Option[MyRecord] = {
-    val ary: Array[String] = line.split("\\|~\\|", -1);
+    val ary: Array[String] = line.split("\\|~\\|", -1)
     try{
       val hour = ary(0).substring(0, 13).replace("T", "-")
       val uri = ary(2).split("[=|&", -1)
