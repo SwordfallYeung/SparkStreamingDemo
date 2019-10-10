@@ -212,3 +212,7 @@ value.deserializer: 在 DataFrame 上指定，默认 ByteArrayDeserializer<br/>
 enable.auto.commit:<br/>
 interceptor.classes:<br/>
 https://www.cnblogs.com/huzuoliang/p/7070728.html<br/>
+
+【参考资料】:
+
+kafka偏移量超过范围，https://www.jianshu.com/p/157fd4a73b3a

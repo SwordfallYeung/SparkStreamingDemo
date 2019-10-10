@@ -12,7 +12,7 @@ object InternalRedisClient extends Serializable {
   @transient private var pool: JedisPool = null
 
   def makePool(redisHost: String, redisPort: Int, redisTimeout: Int, maxTotal: Int, maxIdle: Int, minIdle: Int): Unit ={
-
+      makePool(redisHost, redisPort, redisTimeout, maxTotal, maxIdle, minIdle, true, false, 10000)
   }
 
   def makePool(redisHost: String, redisPort: Int, redisTimeout: Int, maxTotal: Int, maxIdle: Int, minIdle: Int, testOnBorrow: Boolean, testOnReturn: Boolean, maxWaitMills: Long): Unit ={
@@ -34,8 +34,7 @@ object InternalRedisClient extends Serializable {
   }
 
   def getPool: JedisPool = {
-    assert(pool != null)
-    pool
+    if (pool != null) pool else null
   }
 
 }

@@ -1,12 +1,13 @@
 package com.swordfall.streamingkafka
 
+import com.swordfall.common.KafkaOffsetUtils
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.TopicPartition
+import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, HasOffsetRanges, KafkaUtils, LocationStrategies}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.codehaus.jackson.map.deser.std.StringDeserializer
 import redis.clients.jedis.Pipeline
 
 /**
@@ -15,8 +16,8 @@ import redis.clients.jedis.Pipeline
 object SparkStreamingKafka {
 
   def main(args: Array[String]): Unit = {
-    val brokers = "node1:9092"
-    val topic = "1234"
+    val brokers = "192.168.187.201:9092"
+    val topic = "nginx"
     val partition: Int = 0 // 测试topic只有一个分区
     val start_offset: Long = 0L
 
@@ -25,9 +26,9 @@ object SparkStreamingKafka {
       "bootstrap.servers" -> brokers,
       "key.deserializer" -> classOf[StringDeserializer],
       "value.deserializer" -> classOf[StringDeserializer],
-      "groud.id" -> "exactly-once",
+      "group.id" -> "test",
       "enable.auto.commit" -> (false: java.lang.Boolean),
-      "auto.offset.reset" -> "none"
+      "auto.offset.reset" -> "latest"
     )
 
     // Redis configurations
@@ -48,10 +49,11 @@ object SparkStreamingKafka {
     val jedis = InternalRedisClient.getPool.getResource
     jedis.select(dbDefaultIndex)
     val topic_partition_key = topic + "_" + partition
-    var lastOffset = 0L
-    val lastSavedOffset = jedis.get(topic_partition_key)
 
+    val lastSavedOffset = jedis.get(topic_partition_key)
+    var fromOffsets: Map[TopicPartition, Long] = null
     if (null != lastSavedOffset){
+      var lastOffset = 0L
       try{
         lastOffset = lastSavedOffset.toLong
       }catch{
@@ -59,13 +61,17 @@ object SparkStreamingKafka {
           println("get lastSavedOffset error, lastSavedOffset from redis [" + lastSavedOffset + "]")
           System.exit(1)
       }
+      // 设置每个分区起始的Offset
+      fromOffsets = Map{ new TopicPartition(topic, partition) -> lastOffset }
+
+      println("lastOffset from redis -> " + lastOffset)
+    }else{
+      //等于null，表示第一次, redis里面没有存储偏移量，但是可能会存在kafka存在一部分数据丢失或者过期，但偏移量没有记录在redis里面，
+      // 偏移量还是按0的话，会导致偏移量范围出错，故需要拿到earliest或者latest的偏移量
+      fromOffsets = KafkaOffsetUtils.getCurrentOffset(kafkaParams, List(topic))
     }
     InternalRedisClient.getPool.returnResource(jedis)
 
-    println("lastOffset from redis -> " + lastOffset)
-
-    // 设置每个分区起始的Offset
-    val fromOffsets = Map{ new TopicPartition(topic, partition) -> lastOffset }
 
     // 使用Direct API 创建Stream
     val stream = KafkaUtils.createDirectStream[String, String](
@@ -92,11 +98,11 @@ object SparkStreamingKafka {
           record =>
 
             // 增加网站小时pv
-            val site_pv_by_hour_key = "site_pv" + record.site_id + "_" + record.hour
+            val site_pv_by_hour_key = "site_pv_" + record.site_id + "_" + record.hour
             pipeline.incr(site_pv_by_hour_key)
 
             // 增加小时总pv
-            val pv_by_hour_key = "pv" + record.hour
+            val pv_by_hour_key = "pv_" + record.hour
             pipeline.incr(pv_by_hour_key)
 
             // 使用set保存当天每个小时网站的uv
@@ -121,6 +127,9 @@ object SparkStreamingKafka {
 
         InternalRedisClient.getPool.returnResource(jedis)
     }
+
+    ssc.start()
+    ssc.awaitTermination()
   }
 
   case class MyRecord(hour: String, user_id: String, site_id: String)
@@ -133,7 +142,7 @@ object SparkStreamingKafka {
     val ary: Array[String] = line.split("\\|~\\|", -1)
     try{
       val hour = ary(0).substring(0, 13).replace("T", "-")
-      val uri = ary(2).split("[=|&", -1)
+      val uri = ary(2).split("[=|&]", -1)
       val user_id = uri(1)
       val site_id = uri(3)
       return scala.Some(MyRecord(hour, user_id, site_id))
@@ -142,4 +151,5 @@ object SparkStreamingKafka {
     }
     return None
   }
+
 }

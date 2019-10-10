@@ -61,16 +61,61 @@
       <version>2.1.0</version>
     </dependency>
     <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka_2.11</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
       <version>2.4.3</version>
     </dependency>
     <!-- streaming kafka redis end -->
+
+    <dependency>
+      <groupId>ch.ethz.ganymed</groupId>
+      <artifactId>ganymed-ssh2</artifactId>
+      <version>262</version>
+    </dependency>
+
+    <!--<dependency>
+      <groupId>de.heikoseeberger</groupId>
+      <artifactId>akka-http-json4s_2.11</artifactId>
+      <version>1.22.0</version>
+    </dependency>-->
+
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-xml</artifactId>
+      <version>2.11.0-M4</version>
+    </dependency>
   </dependencies>
 
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <plugins>
+
+      <!--java打包插件-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
@@ -82,11 +127,6 @@
               <goal>testCompile</goal>
             </goals>
             <configuration>
-              <args>
-                <arg>-make:transitive</arg>
-                <arg>-dependencyfile</arg>
-                <arg>${project.build.directory}/.scala_dependencies</arg>
-              </args>
             </configuration>
           </execution>
         </executions>
