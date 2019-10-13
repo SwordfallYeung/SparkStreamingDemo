@@ -1,10 +1,8 @@
 package com.swordfall.common
 
 import java.time.Duration
-
 import org.apache.kafka.clients.consumer.{Consumer, ConsumerConfig, KafkaConsumer, NoOffsetForPartitionException}
 import org.apache.kafka.common.TopicPartition
-
 import scala.collection.JavaConversions._
 import scala.collection.mutable
 

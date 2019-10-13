@@ -28,11 +28,7 @@
       <artifactId>hadoop-client</artifactId>
       <version>${hadoop.version}</version>
     </dependency>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.38</version>
-    </dependency>
+
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_2.11</artifactId>
@@ -78,12 +74,6 @@
       <artifactId>ganymed-ssh2</artifactId>
       <version>262</version>
     </dependency>
-
-    <!--<dependency>
-      <groupId>de.heikoseeberger</groupId>
-      <artifactId>akka-http-json4s_2.11</artifactId>
-      <version>1.22.0</version>
-    </dependency>-->
 
     <dependency>
       <groupId>org.scala-lang</groupId>
